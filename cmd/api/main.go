@@ -1,10 +1,14 @@
 package main
 
-import "log"
+import (
+	"log"
+
+	"github.com/jguaura/gopher_prod/internal/env"
+)
 
 func main() {
 	cfg := config {
-		address: ":8080",
+		address: env.GetString("ADDR", ":8081"),
 	}
 
 	app := application{
